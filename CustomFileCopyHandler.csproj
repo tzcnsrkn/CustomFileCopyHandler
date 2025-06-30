@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="files\FileA.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

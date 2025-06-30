@@ -1,0 +1,30 @@
+apiVersion: '2019-12-01'
+location: northeurope
+name: custom-file-copy-handler
+properties:
+  containers:
+  - name: custom-file-copy-handler-srk05
+    properties:
+      environmentVariables: []
+      image: <image_name>
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 1.5
+      volumeMounts:
+      - mountPath: /mnt/destination/
+        name: filevolume
+  osType: Linux
+  restartPolicy: Always
+  imageRegistryCredentials:
+  - server: <server_name>
+    username: <user_name>
+    # password will be here
+  volumes:
+  - name: filevolume
+    azureFile:
+      sharename: containershare
+      storageAccountName: <storage_acc_name>
+      # storageAccountKey will be here
+tags: {}
+type: Microsoft.ContainerInstance/containerGroups
