@@ -15,7 +15,7 @@ properties:
       - mountPath: /mnt/destination/
         name: filevolume
   osType: Linux
-  restartPolicy: Always
+  restartPolicy: Never
   imageRegistryCredentials:
   - server: <server_name>
     username: <user_name>
